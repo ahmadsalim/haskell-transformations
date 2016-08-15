@@ -1,4 +1,4 @@
-module Refactoring where
+module SimpleRefactorings where
 
 import Nats
 import Tip
