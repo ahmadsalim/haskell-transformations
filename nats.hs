@@ -1,9 +1,12 @@
+{-# LANGUAGE DeriveDataTypeable, DeriveAnyClass #-}
 module Nats where
 
+import Data.Data
+import Data.Typeable
 import Test.LazySmallCheck
 
 data Nat = Z | S Nat
-  deriving (Show, Eq)
+  deriving (Show, Eq, Ord, Data, Typeable)
 
 instance Serial Nat where
   series = cons0 Z \/ cons1 S
